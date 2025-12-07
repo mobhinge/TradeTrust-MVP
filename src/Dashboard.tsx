@@ -562,7 +562,7 @@ const Dashboard: React.FC = () => {
                             <button
                               key={kw}
                               onClick={() => toggleKeyword(kw)}
-                              className={`flex items-center gap-1.5 px-2 py-0.5 rounded-md transition-all ${
+                              className={`flex items-center gap-1.5 px-2 py-0.5 rounded-md transition-all group ${
                                 isActive
                                   ? 'bg-red-50 border border-red-200 text-red-700 hover:bg-red-100'
                                   : 'bg-gray-100 border border-gray-200 text-gray-400 hover:bg-gray-200'
@@ -570,7 +570,7 @@ const Dashboard: React.FC = () => {
                             >
                               <span className={`text-xs font-medium ${isActive ? 'line-through' : ''}`}>{kw}</span>
                               {isActive ? (
-                                <X className="w-3 h-3" />
+                                <X className="w-3 h-3 opacity-60 group-hover:opacity-100" />
                               ) : (
                                 <RotateCcw className="w-3 h-3" />
                               )}
@@ -629,6 +629,12 @@ const Dashboard: React.FC = () => {
                             </div>
                           </button>
                         ))}
+                        <button className="w-full mt-1.5 py-1.5 border border-dashed border-gray-300 rounded text-[10px] text-gray-400 hover:text-gray-600 hover:border-gray-400 hover:bg-gray-50 transition-all flex items-center justify-center gap-1">
+                          <span className="text-sm font-light leading-none">+</span> Add Competitor / URL
+                        </button>
+                        <button className="w-full py-1.5 border border-dashed border-gray-300 rounded text-xs text-gray-400 hover:text-gray-600 hover:border-gray-400 hover:bg-gray-50 transition-all flex items-center justify-center gap-1">
+                          <span>+</span> Add Competitor / URL
+                        </button>
                       </div>
                     </div>
                   )}
@@ -717,12 +723,14 @@ const Dashboard: React.FC = () => {
                         setTempBudget(dailyBudget);
                         setShowBudgetModal(true);
                       }}
-                      className="text-center p-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg transition-colors group flex flex-col justify-center"
+                      className="relative text-center p-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg transition-colors group flex flex-col justify-center"
                     >
-                      <div className="text-xl font-mono font-bold text-blue-600">${dailyBudget}</div>
+                      <div className="absolute top-1 right-1 text-[10px] font-medium text-blue-600 flex items-center gap-0.5 bg-white/50 px-1 rounded hover:bg-white transition-colors">
+                        Adjust ⚙️
+                      </div>
+                      <div className="text-xl font-mono font-bold text-blue-600 mt-1">${dailyBudget}</div>
                       <div className="text-xs text-gray-600 mt-0.5 flex items-center justify-center gap-1">
                         Daily Budget
-                        <Info className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
                     </button>
                     <div className="text-center p-2 bg-green-50 border border-green-100 rounded-lg shadow-sm flex flex-col justify-center">
