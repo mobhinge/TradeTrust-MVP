@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Lock, CheckCircle2, AlertCircle, Activity, ExternalLink, Loader2, X, Smartphone, Monitor, RotateCcw, Info, DollarSign, TrendingUp, HelpCircle } from 'lucide-react';
+import contractorImage from './assets/contractor_van.png';
 
 const Dashboard: React.FC = () => {
   const narrativeSequence = [
@@ -152,7 +153,7 @@ const Dashboard: React.FC = () => {
             </div>
 
             {/* Interactive Semi-circle gauge */}
-            <div className="relative h-56 mb-2">
+            <div className="relative h-40 mb-1">
               <svg 
                 viewBox="0 0 240 140" 
                 className="w-full h-full cursor-pointer touch-none select-none"
@@ -685,7 +686,7 @@ const Dashboard: React.FC = () => {
                           previewMode === 'mobile' ? 'w-16 h-16' : 'w-20 h-20'
                         }`}>
                           <img 
-                            src="https://images.unsplash.com/photo-1581094794329-cd119277f838?auto=format&fit=crop&q=80&w=200" 
+                            src={contractorImage}
                             alt="Contractor" 
                             className="w-full h-full object-cover"
                           />
