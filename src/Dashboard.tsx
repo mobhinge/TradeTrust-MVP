@@ -612,28 +612,25 @@ const Dashboard: React.FC = () => {
                           <button
                             key={pub.name}
                             onClick={() => togglePublisher(pub.name)}
-                            className={`w-full flex items-center justify-between py-1.5 px-2 rounded hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-all ${
+                            className={`w-full flex items-center justify-between py-1 px-1.5 rounded hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-all ${
                               pub.enabled ? 'opacity-100' : 'opacity-40'
                             }`}
                           >
-                            <span className="text-xs font-medium text-gray-700">{pub.name}</span>
-                            <div className="flex items-center gap-1.5">
-                              <span className={`text-xs font-medium ${pub.enabled ? 'text-green-600' : 'text-gray-400'}`}>
+                            <span className="text-[10px] font-medium text-gray-700 truncate max-w-[120px] text-left">{pub.name}</span>
+                            <div className="flex items-center gap-1">
+                              <span className={`text-[10px] font-medium ${pub.enabled ? 'text-green-600' : 'text-gray-400'}`}>
                                 {pub.enabled ? 'Active' : 'Paused'}
                               </span>
                               {pub.enabled ? (
-                                <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
+                                <CheckCircle2 className="w-3 h-3 text-green-500" />
                               ) : (
-                                <div className="w-3.5 h-3.5 border-2 border-gray-300 rounded-full" />
+                                <div className="w-3 h-3 border border-gray-300 rounded-full" />
                               )}
                             </div>
                           </button>
                         ))}
-                        <button className="w-full mt-1.5 py-1.5 border border-dashed border-gray-300 rounded text-[10px] text-gray-400 hover:text-gray-600 hover:border-gray-400 hover:bg-gray-50 transition-all flex items-center justify-center gap-1">
-                          <span className="text-sm font-light leading-none">+</span> Add Competitor / URL
-                        </button>
-                        <button className="w-full py-1.5 border border-dashed border-gray-300 rounded text-xs text-gray-400 hover:text-gray-600 hover:border-gray-400 hover:bg-gray-50 transition-all flex items-center justify-center gap-1">
-                          <span>+</span> Add Competitor / URL
+                        <button className="w-full mt-1 py-1 border border-dashed border-gray-300 rounded text-[10px] text-gray-400 hover:text-gray-600 hover:border-gray-400 hover:bg-gray-50 transition-all flex items-center justify-center gap-1">
+                          <span className="text-xs font-light leading-none">+</span> Add Competitor / URL
                         </button>
                       </div>
                     </div>
