@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Lock, CheckCircle2, AlertCircle, Activity, ExternalLink, Loader2, X, Smartphone, Monitor, RotateCcw, Info, DollarSign, TrendingUp } from 'lucide-react';
+import { Shield, Lock, CheckCircle2, AlertCircle, Activity, ExternalLink, Loader2, X, Smartphone, Monitor, RotateCcw, Info, DollarSign, TrendingUp, HelpCircle } from 'lucide-react';
 
 const Dashboard: React.FC = () => {
   const narrativeSequence = [
@@ -90,7 +90,7 @@ const Dashboard: React.FC = () => {
   };
 
   const getWasteInventory = () => {
-    return 142 - (allKeywords.length - activeKeywords.length) * 20;
+    return (2419 - (allKeywords.length - activeKeywords.length) * 380).toLocaleString();
   };
 
   const getEstimatedClicks = () => {
@@ -681,12 +681,14 @@ const Dashboard: React.FC = () => {
                   <div className={`mx-auto transition-all duration-300 ${previewMode === 'mobile' ? 'max-w-sm' : 'max-w-3xl'}`}>
                     <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
                       <div className="flex gap-3">
-                        <div className={`bg-gray-200 rounded-md flex items-center justify-center flex-shrink-0 transition-all ${
+                        <div className={`relative overflow-hidden rounded-md flex-shrink-0 transition-all ${
                           previewMode === 'mobile' ? 'w-16 h-16' : 'w-20 h-20'
                         }`}>
-                          <div className="text-center">
-                            <div className={`text-gray-300 ${previewMode === 'mobile' ? 'text-lg' : 'text-xl'}`}>📷</div>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1581094794329-cd119277f838?auto=format&fit=crop&q=80&w=200" 
+                            alt="Contractor" 
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                         <div className="flex-1">
                           <h4 className={`font-bold text-gray-900 mb-1 leading-tight ${
@@ -732,9 +734,15 @@ const Dashboard: React.FC = () => {
                     </button>
                     <div className="text-center p-2 bg-green-50 border border-green-100 rounded-lg shadow-sm flex flex-col justify-center">
                       <div className="text-2xl font-bold text-green-700 leading-none">
-                        {Math.floor(dailyBudget / 50)}-{Math.ceil(dailyBudget / 40)}
+                        {Math.floor(dailyBudget / 60)}-{Math.ceil(dailyBudget / 40)} Claims
                       </div>
-                      <div className="text-xs font-bold text-green-800 mt-1">Est. Verified Jobs</div>
+                      <div className="text-xs font-bold text-green-800 mt-1 flex items-center justify-center gap-1 group relative cursor-help">
+                        Est. Verified Jobs
+                        <HelpCircle className="w-3 h-3 text-green-600" />
+                        <div className="absolute bottom-full mb-2 w-40 bg-slate-900 text-white text-[10px] p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 font-normal">
+                          Filtering clicks lacking GPS verification.
+                        </div>
+                      </div>
                       <div className="text-[10px] text-green-600 flex items-center justify-center gap-1 mt-0.5">
                         <CheckCircle2 className="w-2.5 h-2.5" />
                         via Phone/GPS
