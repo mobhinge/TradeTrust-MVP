@@ -32,11 +32,11 @@ const Dashboard: React.FC = () => {
   const allKeywords = ['DIY', 'Free', 'Intern', 'Trainee', 'Salary'];
   const [activeKeywords, setActiveKeywords] = useState<string[]>(allKeywords);
   const [publishers, setPublishers] = useState([
-    { name: 'Yahoo Finance', verified: true, enabled: true, reach: 2500000 },
-    { name: 'MarketWatch', verified: true, enabled: true, reach: 1800000 },
-    { name: 'CNN Business', verified: true, enabled: true, reach: 3200000 },
-    { name: 'Bloomberg', verified: true, enabled: true, reach: 2100000 },
-    { name: 'Forbes', verified: true, enabled: true, reach: 2900000 },
+    { name: 'CNN Weather (Local)', verified: true, enabled: true, reach: 2500000 },
+    { name: 'BobVila.com / Home', verified: true, enabled: true, reach: 1800000 },
+    { name: 'Yahoo! Real Estate', verified: true, enabled: true, reach: 3200000 },
+    { name: 'Architectural Digest', verified: true, enabled: true, reach: 2100000 },
+    { name: 'SF Gate (Home Section)', verified: true, enabled: true, reach: 2900000 },
   ]);
   const [previewMode, setPreviewMode] = useState<'desktop' | 'mobile'>('desktop');
   const [isActivating, setIsActivating] = useState(false);
