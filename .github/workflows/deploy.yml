@@ -29,9 +29,11 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Build
         run: npm run build
+        env:
+          GITHUB_ACTIONS: true
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
@@ -41,4 +43,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
