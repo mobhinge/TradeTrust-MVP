@@ -445,50 +445,50 @@ const Dashboard: React.FC = () => {
       )}
 
       {/* Left Sidebar */}
-      <div className="w-80 bg-slate-900 text-white flex flex-col shadow-xl">
-        <div className="p-4 border-b border-slate-700">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <Shield className="w-6 h-6" />
+      <div className="w-64 bg-slate-900 text-white flex flex-col shadow-xl">
+        <div className="p-2.5 border-b border-slate-700">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <Shield className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-xl font-bold">TradeTrust</h1>
-              <p className="text-xs text-slate-400">Campaign Manager</p>
+              <h1 className="text-base font-bold">TradeTrust</h1>
+              <p className="text-[10px] text-slate-400">Campaign Manager</p>
             </div>
           </div>
           {hasUnsavedChanges && (
-            <div className="mt-3 flex items-center gap-2 text-xs text-yellow-400 bg-yellow-400 bg-opacity-10 px-2 py-1 rounded">
-              <AlertCircle className="w-3 h-3" />
+            <div className="mt-2 flex items-center gap-1.5 text-[10px] text-yellow-400 bg-yellow-400 bg-opacity-10 px-1.5 py-0.5 rounded">
+              <AlertCircle className="w-2.5 h-2.5" />
               <span>Unsaved changes</span>
             </div>
           )}
         </div>
 
         {/* System Activity */}
-        <div className="flex-1 p-4 overflow-y-auto">
-          <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">System Activity</h3>
-          <div className="space-y-2">
+        <div className="flex-1 p-2.5 overflow-y-auto">
+          <h3 className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2">System Activity</h3>
+          <div className="space-y-1.5">
             {logs.map((log) => (
-              <div key={log.id} className="flex items-start gap-2 text-sm">
-                <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${
+              <div key={log.id} className="flex items-start gap-1.5 text-sm">
+                <div className={`w-1.5 h-1.5 rounded-full mt-1 flex-shrink-0 ${
                   log.type === 'success' ? 'bg-green-400' : 
                   log.type === 'warning' ? 'bg-yellow-400' : 
                   'bg-blue-400'
                 }`} />
-                <p className="text-slate-300 leading-snug text-xs">{log.message}</p>
+                <p className="text-slate-300 leading-tight text-[10px]">{log.message}</p>
               </div>
             ))}
             {isInitializing && (
-              <div className="flex items-center gap-2 text-blue-400 text-xs">
-                <Loader2 className="w-3 h-3 animate-spin" />
+              <div className="flex items-center gap-1.5 text-blue-400 text-[10px]">
+                <Loader2 className="w-2.5 h-2.5 animate-spin" />
                 <span>Processing...</span>
               </div>
             )}
           </div>
         </div>
 
-        <div className="p-4 border-t border-slate-700">
-          <div className="text-xs text-slate-400">
+        <div className="p-2.5 border-t border-slate-700">
+          <div className="text-[10px] text-slate-400">
             <p>Last updated: {new Date().toLocaleTimeString()}</p>
           </div>
         </div>
@@ -497,23 +497,23 @@ const Dashboard: React.FC = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="bg-white border-b border-gray-200 px-6 py-3 flex-shrink-0">
+        <div className="bg-white border-b border-gray-200 px-4 py-1.5 flex-shrink-0">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-0.5">Forensic Strategy Audit</h2>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <Activity className="w-3.5 h-3.5" />
-                  <span className="text-sm">joesplumbing-chicago.com</span>
+                <h2 className="text-base font-bold text-gray-900 mb-0">Forensic Strategy Audit</h2>
+                <div className="flex items-center gap-1.5 text-gray-600">
+                  <Activity className="w-3 h-3" />
+                  <span className="text-xs">joesplumbing-chicago.com</span>
                 </div>
               </div>
-              <div className="flex items-center gap-2 bg-green-50 border border-green-200 px-3 py-2 rounded-lg">
-                <div className="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center">
-                  <Shield className="w-4 h-4 text-white" />
+              <div className="flex items-center gap-1.5 bg-green-50 border border-green-200 px-2 py-1 rounded-lg">
+                <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center">
+                  <Shield className="w-3.5 h-3.5 text-white" />
                 </div>
                 <div>
-                  <div className="text-xs text-green-700 font-medium">LICENSE VERIFIED</div>
-                  <div className="text-xs font-mono font-bold text-green-900">#IL-50552</div>
+                  <div className="text-[10px] text-green-700 font-medium">LICENSE VERIFIED</div>
+                  <div className="text-[10px] font-mono font-bold text-green-900">#IL-50552</div>
                 </div>
               </div>
             </div>
@@ -522,65 +522,65 @@ const Dashboard: React.FC = () => {
 
         {/* Scrollable Content Area */}
         <div className="flex-1 overflow-y-auto">
-          <div className="p-4">
-            <div className="max-w-7xl mx-auto space-y-3">
+          <div className="p-2">
+            <div className="max-w-7xl mx-auto space-y-2">
               {/* Loading State */}
               {!visibleCards.filter && !visibleCards.publishers && (
-                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-8 flex flex-col items-center justify-center">
-                  <Loader2 className="w-12 h-12 text-blue-600 animate-spin mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Initializing Forensics Module...</h3>
-                  <p className="text-sm text-gray-500">Scanning campaign parameters and validating strategy</p>
+                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-4 flex flex-col items-center justify-center">
+                  <Loader2 className="w-8 h-8 text-blue-600 animate-spin mb-2" />
+                  <h3 className="text-sm font-semibold text-gray-900 mb-1">Initializing Forensics Module...</h3>
+                  <p className="text-xs text-gray-500">Scanning campaign parameters and validating strategy</p>
                 </div>
               )}
 
               {/* Top Row - Two Cards */}
               {(visibleCards.filter || visibleCards.publishers) && (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
                   {/* Negative Keywords Card */}
                   {visibleCards.filter && (
-                    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 animate-fadeIn">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                            <Lock className="w-4 h-4 text-red-600" />
+                    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 animate-fadeIn">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-6 h-6 bg-red-100 rounded-lg flex items-center justify-center">
+                            <Lock className="w-3 h-3 text-red-600" />
                           </div>
                           <div>
-                            <h3 className="text-sm font-semibold text-gray-900">Content Filter</h3>
-                            <p className="text-xs text-gray-500">Click to toggle filters</p>
+                            <h3 className="text-xs font-semibold text-gray-900">Content Filter</h3>
+                            <p className="text-[10px] text-gray-500">Click to toggle filters</p>
                           </div>
                         </div>
                         <div className="group relative">
-                          <Info className="w-4 h-4 text-gray-400 cursor-help" />
-                          <div className="absolute right-0 top-6 w-48 bg-gray-900 text-white text-xs rounded p-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                          <Info className="w-3 h-3 text-gray-400 cursor-help" />
+                          <div className="absolute right-0 top-5 w-40 bg-gray-900 text-white text-[10px] rounded p-1.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
                             Block low-quality traffic by filtering out these search terms
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-wrap gap-1.5 mb-2 min-h-[60px]">
+                      <div className="flex flex-wrap gap-1 mb-1.5 min-h-[45px]">
                         {allKeywords.map((kw) => {
                           const isActive = activeKeywords.includes(kw);
                           return (
                             <button
                               key={kw}
                               onClick={() => toggleKeyword(kw)}
-                              className={`flex items-center gap-1.5 px-2 py-0.5 rounded-md transition-all group ${
+                              className={`flex items-center gap-1 px-1.5 py-0.5 rounded-md transition-all group ${
                                 isActive
                                   ? 'bg-red-50 border border-red-200 text-red-700 hover:bg-red-100'
                                   : 'bg-gray-100 border border-gray-200 text-gray-400 hover:bg-gray-200'
                               }`}
                             >
-                              <span className={`text-xs font-medium ${isActive ? 'line-through' : ''}`}>{kw}</span>
+                              <span className={`text-[10px] font-medium ${isActive ? 'line-through' : ''}`}>{kw}</span>
                               {isActive ? (
-                                <X className="w-3 h-3 opacity-60 group-hover:opacity-100" />
+                                <X className="w-2.5 h-2.5 opacity-60 group-hover:opacity-100" />
                               ) : (
-                                <RotateCcw className="w-3 h-3" />
+                                <RotateCcw className="w-2.5 h-2.5" />
                               )}
                             </button>
                           );
                         })}
                       </div>
-                      <div className="pt-2 border-t border-gray-100">
-                        <div className="flex items-center justify-between text-xs">
+                      <div className="pt-1.5 border-t border-gray-100">
+                        <div className="flex items-center justify-between text-[10px]">
                           <span className="text-gray-600">Waste Inventory Detected</span>
                           <span className="font-mono font-bold text-red-600">{getWasteInventory()}</span>
                         </div>
@@ -590,47 +590,47 @@ const Dashboard: React.FC = () => {
 
                   {/* Publisher Safe List Card */}
                   {visibleCards.publishers && (
-                    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 animate-fadeIn">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                            <CheckCircle2 className="w-4 h-4 text-blue-600" />
+                    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 animate-fadeIn">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <CheckCircle2 className="w-3 h-3 text-blue-600" />
                           </div>
                           <div>
-                            <h3 className="text-sm font-semibold text-gray-900">Verified Publishers</h3>
-                            <p className="text-xs text-gray-500">Premium financial sites</p>
+                            <h3 className="text-xs font-semibold text-gray-900">Verified Publishers</h3>
+                            <p className="text-[10px] text-gray-500">Premium financial sites</p>
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="text-xs text-gray-500">Est. Reach</div>
-                          <div className="text-sm font-mono font-bold text-blue-600">
+                          <div className="text-[10px] text-gray-500">Est. Reach</div>
+                          <div className="text-xs font-mono font-bold text-blue-600">
                             {(getTotalReach() / 1000000).toFixed(1)}M
                           </div>
                         </div>
                       </div>
-                      <div className="space-y-1.5">
+                      <div className="space-y-1">
                         {publishers.map((pub) => (
                           <button
                             key={pub.name}
                             onClick={() => togglePublisher(pub.name)}
-                            className={`w-full flex items-center justify-between py-1 px-1.5 rounded hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-all ${
+                            className={`w-full flex items-center justify-between py-0.5 px-1 rounded hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-all ${
                               pub.enabled ? 'opacity-100' : 'opacity-40'
                             }`}
                           >
                             <span className="text-[10px] font-medium text-gray-700 truncate max-w-[120px] text-left">{pub.name}</span>
-                            <div className="flex items-center gap-1">
+                            <div className="flex items-center gap-0.5">
                               <span className={`text-[10px] font-medium ${pub.enabled ? 'text-green-600' : 'text-gray-400'}`}>
                                 {pub.enabled ? 'Active' : 'Paused'}
                               </span>
                               {pub.enabled ? (
-                                <CheckCircle2 className="w-3 h-3 text-green-500" />
+                                <CheckCircle2 className="w-2.5 h-2.5 text-green-500" />
                               ) : (
-                                <div className="w-3 h-3 border border-gray-300 rounded-full" />
+                                <div className="w-2.5 h-2.5 border border-gray-300 rounded-full" />
                               )}
                             </div>
                           </button>
                         ))}
-                        <button className="w-full mt-1 py-1 border border-dashed border-gray-300 rounded text-[10px] text-gray-400 hover:text-gray-600 hover:border-gray-400 hover:bg-gray-50 transition-all flex items-center justify-center gap-1">
+                        <button className="w-full mt-0.5 py-0.5 border border-dashed border-gray-300 rounded text-[10px] text-gray-400 hover:text-gray-600 hover:border-gray-400 hover:bg-gray-50 transition-all flex items-center justify-center gap-0.5">
                           <span className="text-xs font-light leading-none">+</span> Add Competitor / URL
                         </button>
                       </div>
@@ -641,49 +641,49 @@ const Dashboard: React.FC = () => {
 
               {/* Ad Preview Card */}
               {visibleCards.adPreview && (
-                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 animate-fadeIn">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 animate-fadeIn">
+                  <div className="flex items-center justify-between mb-1.5">
                     <div>
-                      <h3 className="text-sm font-semibold text-gray-900">Ad Preview</h3>
-                      <p className="text-xs text-gray-500">How your ad appears</p>
+                      <h3 className="text-xs font-semibold text-gray-900">Ad Preview</h3>
+                      <p className="text-[10px] text-gray-500">How your ad appears</p>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="flex items-center bg-gray-100 rounded-lg p-1">
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center bg-gray-100 rounded-lg p-0.5">
                         <button
                           onClick={() => setPreviewMode('desktop')}
-                          className={`px-2 py-1 rounded flex items-center gap-1 text-xs font-medium transition-colors ${
+                          className={`px-1.5 py-0.5 rounded flex items-center gap-0.5 text-[10px] font-medium transition-colors ${
                             previewMode === 'desktop' 
                               ? 'bg-white text-blue-600 shadow-sm' 
                               : 'text-gray-600 hover:text-gray-900'
                           }`}
                         >
-                          <Monitor className="w-3 h-3" />
+                          <Monitor className="w-2.5 h-2.5" />
                           Desktop
                         </button>
                         <button
                           onClick={() => setPreviewMode('mobile')}
-                          className={`px-2 py-1 rounded flex items-center gap-1 text-xs font-medium transition-colors ${
+                          className={`px-1.5 py-0.5 rounded flex items-center gap-0.5 text-[10px] font-medium transition-colors ${
                             previewMode === 'mobile' 
                               ? 'bg-white text-blue-600 shadow-sm' 
                               : 'text-gray-600 hover:text-gray-900'
                           }`}
                         >
-                          <Smartphone className="w-3 h-3" />
+                          <Smartphone className="w-2.5 h-2.5" />
                           Mobile
                         </button>
                       </div>
-                      <div className="flex items-center gap-1.5 text-xs text-blue-600 font-medium">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
+                      <div className="flex items-center gap-1 text-[10px] text-blue-600 font-medium">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse"></div>
                         LIVE
                       </div>
                     </div>
                   </div>
 
                   <div className={`mx-auto transition-all duration-300 ${previewMode === 'mobile' ? 'max-w-sm' : 'max-w-3xl'}`}>
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
-                      <div className="flex gap-3">
+                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-2">
+                      <div className="flex gap-2">
                         <div className={`relative overflow-hidden rounded-md flex-shrink-0 transition-all ${
-                          previewMode === 'mobile' ? 'w-16 h-16' : 'w-20 h-20'
+                          previewMode === 'mobile' ? 'w-12 h-12' : 'w-14 h-14'
                         }`}>
                           <img 
                             src={contractorImage}
@@ -692,19 +692,19 @@ const Dashboard: React.FC = () => {
                           />
                         </div>
                         <div className="flex-1">
-                          <h4 className={`font-bold text-gray-900 mb-1 leading-tight ${
-                            previewMode === 'mobile' ? 'text-sm' : 'text-base'
+                          <h4 className={`font-bold text-gray-900 mb-0.5 leading-tight ${
+                            previewMode === 'mobile' ? 'text-xs' : 'text-sm'
                           }`}>
                             Emergency Plumbing - 24/7 Licensed Pros
                           </h4>
-                          <p className={`text-gray-700 mb-2 leading-snug ${
-                            previewMode === 'mobile' ? 'text-xs' : 'text-xs'
+                          <p className={`text-gray-700 mb-1 leading-tight ${
+                            previewMode === 'mobile' ? 'text-[10px]' : 'text-[10px]'
                           }`}>
                             Verified Bonded & Insured. Don't risk DIY failures. Serving Zip 60614.
                           </p>
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs text-gray-400 uppercase tracking-wide font-semibold">Sponsored</span>
-                            <ExternalLink className="w-3 h-3 text-gray-400" />
+                          <div className="flex items-center gap-1">
+                            <span className="text-[9px] text-gray-400 uppercase tracking-wide font-semibold">Sponsored</span>
+                            <ExternalLink className="w-2 h-2 text-gray-400" />
                           </div>
                         </div>
                       </div>
@@ -715,65 +715,65 @@ const Dashboard: React.FC = () => {
 
               {/* Campaign Metrics Card */}
               {visibleCards.metrics && (
-                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 animate-fadeIn">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-2">Projected Value Forecast</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 animate-fadeIn">
+                  <h3 className="text-xs font-semibold text-gray-900 mb-1.5">Projected Value Forecast</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     <button
                       onClick={() => {
                         setTempBudget(dailyBudget);
                         setShowBudgetModal(true);
                       }}
-                      className="relative text-center p-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg transition-colors group flex flex-col justify-center"
+                      className="relative text-center p-1.5 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg transition-colors group flex flex-col justify-center"
                     >
-                      <div className="absolute top-1 right-1 text-[10px] font-medium text-blue-600 flex items-center gap-0.5 bg-white/50 px-1 rounded hover:bg-white transition-colors">
+                      <div className="absolute top-0.5 right-0.5 text-[9px] font-medium text-blue-600 flex items-center gap-0.5 bg-white/50 px-0.5 rounded hover:bg-white transition-colors">
                         Adjust ⚙️
                       </div>
-                      <div className="text-xl font-mono font-bold text-blue-600 mt-1">${dailyBudget}</div>
-                      <div className="text-xs text-gray-600 mt-0.5 flex items-center justify-center gap-1">
+                      <div className="text-base font-mono font-bold text-blue-600 mt-0.5">${dailyBudget}</div>
+                      <div className="text-[10px] text-gray-600 mt-0.5 flex items-center justify-center gap-1">
                         Daily Budget
                       </div>
                     </button>
-                    <div className="text-center p-2 bg-green-50 border border-green-100 rounded-lg shadow-sm flex flex-col justify-center">
-                      <div className="text-2xl font-bold text-green-700 leading-none">
+                    <div className="text-center p-1.5 bg-green-50 border border-green-100 rounded-lg shadow-sm flex flex-col justify-center">
+                      <div className="text-base font-bold text-green-700 leading-none">
                         {Math.floor(dailyBudget / 60)}-{Math.ceil(dailyBudget / 40)} Claims
                       </div>
-                      <div className="text-xs font-bold text-green-800 mt-1 flex items-center justify-center gap-1 group relative cursor-help">
+                      <div className="text-[10px] font-bold text-green-800 mt-0.5 flex items-center justify-center gap-0.5 group relative cursor-help">
                         Est. Verified Jobs
-                        <HelpCircle className="w-3 h-3 text-green-600" />
-                        <div className="absolute bottom-full mb-2 w-40 bg-slate-900 text-white text-[10px] p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 font-normal">
+                        <HelpCircle className="w-2.5 h-2.5 text-green-600" />
+                        <div className="absolute bottom-full mb-1 w-32 bg-slate-900 text-white text-[9px] p-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 font-normal">
                           Filtering clicks lacking GPS verification.
                         </div>
                       </div>
-                      <div className="text-[10px] text-green-600 flex items-center justify-center gap-1 mt-0.5">
-                        <CheckCircle2 className="w-2.5 h-2.5" />
+                      <div className="text-[9px] text-green-600 flex items-center justify-center gap-0.5 mt-0.5">
+                        <CheckCircle2 className="w-2 h-2" />
                         via Phone/GPS
                       </div>
                     </div>
-                    <div className="text-center p-2 bg-gray-50 rounded-lg flex flex-col justify-center">
-                      <div className="text-xl font-mono font-bold text-red-600">{getWasteInventory()}</div>
-                      <div className="text-xs text-gray-600 mt-0.5">Junk Traffic Blocked</div>
+                    <div className="text-center p-1.5 bg-gray-50 rounded-lg flex flex-col justify-center">
+                      <div className="text-base font-mono font-bold text-red-600">{getWasteInventory()}</div>
+                      <div className="text-[10px] text-gray-600 mt-0.5">Junk Traffic Blocked</div>
                     </div>
-                    <div className="text-center p-2 bg-gray-50 rounded-lg flex flex-col justify-center">
-                      <div className="text-lg font-bold text-gray-900 leading-tight">{publishers.filter(p => p.enabled).length} Premium Sites</div>
-                      <div className="text-xs text-gray-600 mt-0.5">Trust Network</div>
+                    <div className="text-center p-1.5 bg-gray-50 rounded-lg flex flex-col justify-center">
+                      <div className="text-sm font-bold text-gray-900 leading-tight">{publishers.filter(p => p.enabled).length} Premium Sites</div>
+                      <div className="text-[10px] text-gray-600 mt-0.5">Trust Network</div>
                     </div>
                   </div>
                   
                   {/* Performance indicators */}
-                  <div className="mt-3 pt-3 border-t border-gray-100 grid grid-cols-3 gap-3 text-center">
+                  <div className="mt-2 pt-2 border-t border-gray-100 grid grid-cols-3 gap-2 text-center">
                     <div>
-                      <div className="text-xs text-gray-500">Est. High-Intent Visitors</div>
-                      <div className="text-sm font-mono font-bold text-blue-600">{getEstimatedClicks()}</div>
+                      <div className="text-[10px] text-gray-500">Est. High-Intent Visitors</div>
+                      <div className="text-xs font-mono font-bold text-blue-600">{getEstimatedClicks()}</div>
                     </div>
                     <div>
-                      <div className="text-xs text-gray-500">Avg. Cost Per Job</div>
-                      <div className="text-sm font-mono font-bold text-green-600">
+                      <div className="text-[10px] text-gray-500">Avg. Cost Per Job</div>
+                      <div className="text-xs font-mono font-bold text-green-600">
                         ~${Math.round(dailyBudget / ((Math.floor(dailyBudget / 50) + Math.ceil(dailyBudget / 40)) / 2))}.00
                       </div>
                     </div>
                     <div>
-                      <div className="text-xs text-gray-500">Est. Spend</div>
-                      <div className="text-sm font-mono font-bold text-gray-900">${getEstimatedCost()}/day</div>
+                      <div className="text-[10px] text-gray-500">Est. Spend</div>
+                      <div className="text-xs font-mono font-bold text-gray-900">${getEstimatedCost()}/day</div>
                     </div>
                   </div>
                 </div>
@@ -784,23 +784,23 @@ const Dashboard: React.FC = () => {
 
         {/* Sticky Bottom Action Bar */}
         {visibleCards.metrics && (
-          <div className="bg-white border-t border-gray-200 p-4 flex-shrink-0 shadow-lg animate-fadeIn">
+          <div className="bg-white border-t border-gray-200 p-2 flex-shrink-0 shadow-lg animate-fadeIn">
             <div className="max-w-7xl mx-auto">
               <button 
                 onClick={handleActivateCampaign}
                 disabled={isActivating}
-                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold text-base py-3 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-3"
+                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold text-sm py-2 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
               >
                 {isActivating ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <Loader2 className="w-4 h-4 animate-spin" />
                     Processing Campaign...
                   </>
                 ) : (
                   <>
-                    <Shield className="w-5 h-5" />
+                    <Shield className="w-4 h-4" />
                     Activate Campaign
-                    <span className="font-mono bg-blue-700 px-2 py-0.5 rounded text-sm">${dailyBudget}/DAY</span>
+                    <span className="font-mono bg-blue-700 px-1.5 py-0.5 rounded text-xs">${dailyBudget}/DAY</span>
                   </>
                 )}
               </button>
